@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Baloo_2, Nunito, Tajawal } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Analytics } from "@vercel/analytics/next";
 import "../globals.css";
 import { getDictionary, isLocale, LOCALES } from "@/lib/dictionary";
 
@@ -123,6 +124,7 @@ export default async function LocaleLayout({
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
