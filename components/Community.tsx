@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Community() {
   return (
-    <section className="py-24">
+    <section className="bg-success-light py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="grid grid-cols-2 gap-4">
@@ -27,7 +27,7 @@ export function Community() {
           </div>
 
           <div>
-            <h2 className="font-display text-4xl text-foreground sm:text-[42px]">
+            <h2 className="font-display text-4xl font-bold text-foreground sm:text-[42px]">
               Conçu au Maroc, pour les élèves marocains
             </h2>
             <p className="mt-5 text-lg text-foreground-secondary">

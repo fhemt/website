@@ -3,7 +3,6 @@ import Link from "next/link";
 const NAV_LINKS = [
   { href: "#comment-ca-marche", label: "Comment ça marche" },
   { href: "#matieres", label: "Matières" },
-  { href: "#tarifs", label: "Tarifs" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -11,7 +10,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border-light bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-display text-2xl text-foreground">
+        <Link href="/" className="font-display text-2xl font-bold text-foreground">
           fhemt
         </Link>
 

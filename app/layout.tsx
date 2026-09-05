@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Nunito } from "next/font/google";
+import { Baloo_2, Nunito } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const baloo2 = Baloo_2({
+  variable: "--font-baloo",
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800"],
 });
 
 const nunito = Nunito({
@@ -19,7 +18,7 @@ const siteUrl = "https://fhemt.ma";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Fhemt — Comprends enfin tes cours de collège",
+    default: "Fhemt, l'appli qui explique tes cours de collège",
     template: "%s | Fhemt",
   },
   description:
@@ -42,7 +41,7 @@ export const metadata: Metadata = {
     locale: "fr_MA",
     url: siteUrl,
     siteName: "Fhemt",
-    title: "Fhemt — Comprends enfin tes cours de collège",
+    title: "Fhemt, l'appli qui explique tes cours de collège",
     description:
       "L'application qui explique tes cours en français et en darija, avec des exercices et un suivi de progression fait pour les élèves marocains.",
     images: [
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fhemt — Comprends enfin tes cours de collège",
+    title: "Fhemt, l'appli qui explique tes cours de collège",
     description:
       "L'application qui explique tes cours en français et en darija, pensée pour les élèves marocains.",
     images: ["/images/hero-children-blue-wall.jpg"],
@@ -71,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${instrumentSerif.variable} ${nunito.variable}`}
+      className={`${baloo2.variable} ${nunito.variable}`}
     >
       <body className="font-sans antialiased">
         <script
@@ -89,11 +88,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               audience: {
                 "@type": "EducationalAudience",
                 educationalRole: "student",
-              },
-              offers: {
-                "@type": "Offer",
-                price: "199",
-                priceCurrency: "MAD",
               },
               publisher: {
                 "@type": "Organization",
