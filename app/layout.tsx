@@ -18,18 +18,21 @@ const siteUrl = "https://fhemt.ma";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Fhemt, l'appli qui explique tes cours de collège",
+    default: "Fhemt, le soutien scolaire à la maison",
     template: "%s | Fhemt",
   },
   description:
-    "Fhemt explique tes cours de collège en français et en darija, avec des exercices, des quiz et un suivi de progression pensés pour les élèves marocains. Bientôt disponible sur iOS et Android.",
+    "Fhemt reprend tes cours de collège et de lycée en leçons courtes, expliquées en français et en darija, avec des exercices corrigés pour réussir tes examens. Disponible sur iOS et Android.",
   keywords: [
     "soutien scolaire Maroc",
     "cours collège Maroc",
+    "cours lycée Maroc",
     "application éducative marocaine",
     "apprendre en darija",
     "exercices collège Maroc",
     "cours de maths collège",
+    "cours physique chimie collège",
+    "cours SVT collège",
     "application scolaire Maroc",
   ],
   authors: [{ name: "Fhemt" }],
@@ -41,9 +44,9 @@ export const metadata: Metadata = {
     locale: "fr_MA",
     url: siteUrl,
     siteName: "Fhemt",
-    title: "Fhemt, l'appli qui explique tes cours de collège",
+    title: "Fhemt, le soutien scolaire à la maison",
     description:
-      "L'application qui explique tes cours en français et en darija, avec des exercices et un suivi de progression fait pour les élèves marocains.",
+      "Des cours de collège et de lycée en leçons courtes, en français et en darija, avec des exercices corrigés pour réussir tes examens.",
     images: [
       {
         url: "/images/hero-children-blue-wall.jpg",
@@ -55,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fhemt, l'appli qui explique tes cours de collège",
+    title: "Fhemt, le soutien scolaire à la maison",
     description:
-      "L'application qui explique tes cours en français et en darija, pensée pour les élèves marocains.",
+      "Des cours de collège et de lycée en français et en darija, avec des exercices corrigés pour réussir tes examens.",
     images: ["/images/hero-children-blue-wall.jpg"],
   },
   robots: {
@@ -83,7 +86,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               applicationCategory: "EducationalApplication",
               operatingSystem: "iOS, Android",
               description:
-                "Fhemt explique les cours de collège en français et en darija, avec exercices, quiz et suivi de progression pour les élèves marocains.",
+                "Fhemt reprend les cours de collège et de lycée marocains en leçons courtes, en français et en darija, avec des exercices corrigés pour réussir les examens.",
               inLanguage: ["fr-MA", "ar-MA"],
               audience: {
                 "@type": "EducationalAudience",

@@ -1,27 +1,28 @@
 import Image from "next/image";
 import { Zap } from "lucide-react";
-import { WaitlistForm } from "./WaitlistForm";
+import { DownloadButtons } from "./DownloadButtons";
 
 export function Hero() {
   return (
-    <section id="rejoindre" className="relative overflow-hidden pt-14 pb-20 sm:pt-20">
+    <section id="telecharger" className="relative overflow-hidden pt-14 pb-20 sm:pt-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
           <div>
             <h1 className="font-display text-5xl font-bold leading-[1.08] text-foreground sm:text-6xl lg:text-[60px]">
-              Ce que ton prof dit en français,{" "}
-              <span className="text-primary">on te l&apos;explique en darija.</span>
+              Apprends à la maison,{" "}
+              <span className="text-primary">sans prof particulier.</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg text-foreground-secondary">
-              Fhemt reprend le programme du collège marocain, leçon par leçon, avec des exercices
-              et des quiz pour vérifier que t&apos;as vraiment compris, pas juste lu en diagonale.
+              Fhemt reprend tes cours de collège et de lycée en leçons courtes, façon Duolingo,
+              expliquées en français et en darija pour que tu comprennes vraiment. Avec plein
+              d&apos;exercices corrigés pour arriver prêt le jour de l&apos;examen.
             </p>
 
             <div className="mt-8">
-              <WaitlistForm />
+              <DownloadButtons />
               <p className="mt-3 text-sm text-foreground-tertiary">
-                Aucun spam, un seul email le jour du lancement. Bientôt sur iOS et Android.
+                Disponible sur iOS et Android, accessible sur n&apos;importe quel téléphone.
               </p>
             </div>
           </div>

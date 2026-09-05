@@ -17,8 +17,8 @@ export function Community() {
             </div>
             <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-[1.75rem] bg-surface-secondary">
               <Image
-                src="/images/man-smiling-floor.jpg"
-                alt="Artisan marocain souriant en train de tailler des zelliges"
+                src="/images/success-smiling-girl.jpg"
+                alt="Jeune fille marocaine qui rit avec ses camarades"
                 fill
                 sizes="(min-width: 1024px) 260px, 45vw"
                 className="object-cover"

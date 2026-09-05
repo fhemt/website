@@ -17,9 +17,9 @@ const FEATURES = [
     iconBg: "bg-lilac",
     iconColor: "text-on-lilac",
     textColor: "text-on-lilac",
-    title: "Des exercices avec correction détaillée",
+    title: "Plein d'exercices, avec correction détaillée",
     description:
-      "Pas juste la bonne réponse : chaque correction explique le raisonnement, étape par étape, comme le ferait un prof particulier.",
+      "Pas juste la bonne réponse : chaque correction explique le raisonnement, étape par étape. De quoi arriver à l'examen prêt, et rendre tes parents aussi fiers que toi.",
   },
   {
     icon: TrendingUp,
@@ -37,11 +37,13 @@ const FEATURES = [
     iconBg: "bg-secondary",
     iconColor: "text-on-secondary",
     textColor: "text-foreground",
-    title: "Une bonne dose de jeu, sans distraire du travail",
+    title: "Des leçons courtes, façon Duolingo",
     description:
-      "Un système de vies rechargeables pour les quiz, pensé pour donner envie de revenir chaque jour plutôt que d'abandonner après un échec.",
+      "Un système de vies rechargeables et de petits objectifs à la fois, pensé pour donner envie de revenir chaque jour plutôt que d'abandonner après un échec.",
   },
 ];
+
+const SUBJECTS = ["Mathématiques", "Physique-Chimie", "SVT"];
 
 export function Features() {
   return (
@@ -55,6 +57,20 @@ export function Features() {
             Pas une bibliothèque de PDF de plus. Une app construite autour du programme marocain,
             du diagnostic de niveau jusqu&apos;à l&apos;examen blanc.
           </p>
+
+          <div className="mt-6 flex flex-wrap items-center gap-2">
+            {SUBJECTS.map((subject) => (
+              <span
+                key={subject}
+                className="rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-foreground-secondary"
+              >
+                {subject}
+              </span>
+            ))}
+            <span className="text-sm text-foreground-tertiary">
+              et d&apos;autres matières à venir
+            </span>
+          </div>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2">

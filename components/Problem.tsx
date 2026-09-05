@@ -16,16 +16,16 @@ export function Problem() {
 
         <div className="lg:order-1">
           <h2 className="font-display text-4xl font-bold text-foreground sm:text-[42px]">
-            Le cours a été donné en français. <span className="text-on-lilac">Mais t&apos;as compris en darija.</span>
+            Après les cours, <span className="text-on-lilac">qui réexplique à la maison ?</span>
           </h2>
           <p className="mt-5 text-lg text-foreground-secondary">
-            C&apos;est le décalage que vivent des milliers de collégiens chaque jour : suivre un
-            cours de maths ou de SVT dans une langue qu&apos;on ne maîtrise pas encore à 100%, puis
-            rentrer à la maison où personne ne peut le réexpliquer en français.
+            Tout le monde n&apos;a pas un prof particulier sous la main pour revoir un cours de
+            maths ou de SVT le soir. Fhemt joue ce rôle : des leçons courtes et guidées, comme sur
+            Duolingo, que tu peux reprendre seul autant de fois qu&apos;il le faut.
           </p>
           <p className="mt-4 text-lg text-foreground-secondary">
-            Fhemt fait le pont. Chaque leçon existe en français ET en darija, pour que tu
-            comprennes vraiment le fond, pas juste les mots.
+            Et pour que ça reste clair, chaque leçon existe aussi en darija. De quoi comprendre le
+            fond, pas juste retenir des mots en français.
           </p>
         </div>
       </div>

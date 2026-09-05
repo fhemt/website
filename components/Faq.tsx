@@ -7,7 +7,7 @@ const FAQ_ITEMS = [
   {
     question: "Fhemt, c'est pour quel niveau ?",
     answer:
-      "Pour l'instant le collège marocain : 1ère, 2ème et 3ème année. Le lycée arrivera dans une prochaine mise à jour.",
+      "Le collège marocain (1ère, 2ème et 3ème année) et le lycée. Les matières disponibles aujourd'hui sont les mathématiques, la physique-chimie et la SVT, et d'autres arrivent avec le temps.",
   },
   {
     question: "C'est vraiment gratuit ?",
@@ -25,9 +25,9 @@ const FAQ_ITEMS = [
       "Une équipe qui construit le contenu en s'appuyant sur le programme officiel marocain, avec des enseignants qui relisent et valident chaque leçon avant sa mise en ligne.",
   },
   {
-    question: "C'est prévu pour quand ?",
+    question: "Est-ce que ça remplace un prof particulier ?",
     answer:
-      "On finalise le contenu des premiers cours avant d'ouvrir l'app. La liste d'attente est le seul moyen d'être prévenu dès que ce sera prêt, sur iOS et Android.",
+      "Fhemt ne remplace pas l'enseignant en classe, mais il joue le rôle du soutien à la maison : des explications claires, des exercices corrigés et un rythme adapté à chaque élève, sans avoir à payer des heures de cours particuliers.",
   },
 ];
 

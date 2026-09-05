@@ -27,10 +27,10 @@ export function Header() {
         </nav>
 
         <a
-          href="#rejoindre"
+          href="#telecharger"
           className="rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-on-primary transition hover:bg-primary-pressed sm:px-5"
         >
-          Liste d&apos;attente
+          Télécharger
         </a>
       </div>
     </header>
