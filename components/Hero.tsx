@@ -1,29 +1,24 @@
 import Image from "next/image";
 import { Zap } from "lucide-react";
+import { Dictionary } from "@/lib/dictionary";
 import { DownloadButtons } from "./DownloadButtons";
 
-export function Hero() {
+export function Hero({ dict }: { dict: Dictionary }) {
   return (
     <section id="telecharger" className="relative overflow-hidden pt-14 pb-20 sm:pt-20">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-10">
           <div>
             <h1 className="font-display text-5xl font-bold leading-[1.08] text-foreground sm:text-6xl lg:text-[60px]">
-              Apprends à la maison,{" "}
-              <span className="text-primary">sans prof particulier.</span>
+              {dict.hero.title1}
+              <span className="text-primary">{dict.hero.titleAccent}</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-lg text-foreground-secondary">
-              Fhemt reprend tes cours de collège et de lycée en leçons courtes, façon Duolingo,
-              expliquées en français et en darija pour que tu comprennes vraiment. Avec plein
-              d&apos;exercices corrigés pour arriver prêt le jour de l&apos;examen.
-            </p>
+            <p className="mt-6 max-w-xl text-lg text-foreground-secondary">{dict.hero.subtitle}</p>
 
             <div className="mt-8">
-              <DownloadButtons />
-              <p className="mt-3 text-sm text-foreground-tertiary">
-                Disponible sur iOS et Android, accessible sur n&apos;importe quel téléphone.
-              </p>
+              <DownloadButtons dict={dict} />
+              <p className="mt-3 text-sm text-foreground-tertiary">{dict.hero.availability}</p>
             </div>
           </div>
 
@@ -46,8 +41,8 @@ export function Hero() {
                 <Zap className="h-5 w-5 text-on-secondary" strokeWidth={1.75} fill="currentColor" />
               </div>
               <div>
-                <p className="text-sm font-bold text-on-secondary">Chapitre 3 terminé</p>
-                <p className="text-xs text-on-secondary/70">+40 XP gagnés</p>
+                <p className="text-sm font-bold text-on-secondary">{dict.hero.chapterDone}</p>
+                <p className="text-xs text-on-secondary/70">{dict.hero.xpEarned}</p>
               </div>
             </div>
           </div>

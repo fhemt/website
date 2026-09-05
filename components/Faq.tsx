@@ -2,45 +2,20 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { Dictionary } from "@/lib/dictionary";
 
-const FAQ_ITEMS = [
-  {
-    question: "Fhemt, c'est pour quel niveau ?",
-    answer:
-      "Le collège marocain (1ère, 2ème et 3ème année) et le lycée. Les matières disponibles aujourd'hui sont les mathématiques, la physique-chimie et la SVT, et d'autres arrivent avec le temps.",
-  },
-  {
-    question: "C'est vraiment gratuit ?",
-    answer:
-      "Oui. Tous les cours, les leçons et les quiz de fin de leçon sont gratuits. Premium débloque la collection complète d'exercices, les corrections détaillées et les examens blancs.",
-  },
-  {
-    question: "Je peux tout suivre en darija ?",
-    answer:
-      "Chaque leçon existe en français et en darija, et tu bascules de l'une à l'autre en un geste. L'idée n'est pas de remplacer le français, mais de t'aider à vraiment comprendre avant l'examen qui, lui, reste en français.",
-  },
-  {
-    question: "Qui écrit les cours ?",
-    answer:
-      "Une équipe qui construit le contenu en s'appuyant sur le programme officiel marocain, avec des enseignants qui relisent et valident chaque leçon avant sa mise en ligne.",
-  },
-  {
-    question: "Est-ce que ça remplace un prof particulier ?",
-    answer:
-      "Fhemt ne remplace pas l'enseignant en classe, mais il joue le rôle du soutien à la maison : des explications claires, des exercices corrigés et un rythme adapté à chaque élève, sans avoir à payer des heures de cours particuliers.",
-  },
-];
-
-export function Faq() {
+export function Faq({ dict }: { dict: Dictionary }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section id="faq" className="border-t border-border-light bg-surface-warm py-24">
       <div className="mx-auto max-w-3xl px-6">
-        <h2 className="font-display text-4xl font-bold text-foreground sm:text-[42px]">Questions fréquentes</h2>
+        <h2 className="font-display text-4xl font-bold text-foreground sm:text-[42px]">
+          {dict.faq.heading}
+        </h2>
 
         <div className="mt-10 divide-y divide-border-light border-t border-border-light">
-          {FAQ_ITEMS.map((item, index) => {
+          {dict.faq.items.map((item, index) => {
             const isOpen = openIndex === index;
             return (
               <div key={item.question}>
@@ -59,7 +34,7 @@ export function Faq() {
                   />
                 </button>
                 {isOpen && (
-                  <p className="pb-5 pr-10 text-[15px] leading-relaxed text-foreground-secondary">
+                  <p className="pb-5 pe-10 text-[15px] leading-relaxed text-foreground-secondary">
                     {item.answer}
                   </p>
                 )}

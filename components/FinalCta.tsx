@@ -1,17 +1,16 @@
+import { Dictionary } from "@/lib/dictionary";
 import { DownloadButtons } from "./DownloadButtons";
 
-export function FinalCta() {
+export function FinalCta({ dict }: { dict: Dictionary }) {
   return (
     <section className="bg-secondary py-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <h2 className="font-display text-4xl font-bold text-on-secondary sm:text-[42px]">
-          Prêt à comprendre tes cours ?
+          {dict.finalCta.heading}
         </h2>
-        <p className="mx-auto mt-4 max-w-md text-lg text-on-secondary/80">
-          Télécharge Fhemt et commence dès aujourd&apos;hui, à ton rythme.
-        </p>
+        <p className="mx-auto mt-4 max-w-md text-lg text-on-secondary/80">{dict.finalCta.subheading}</p>
         <div className="mt-8 flex justify-center">
-          <DownloadButtons />
+          <DownloadButtons dict={dict} />
         </div>
       </div>
     </section>

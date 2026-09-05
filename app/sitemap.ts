@@ -1,12 +1,11 @@
 import type { MetadataRoute } from "next";
+import { LOCALES } from "@/lib/dictionary";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://fhemt.ma",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-  ];
+  return LOCALES.map((locale) => ({
+    url: `https://fhemt.ma/${locale}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: locale === "fr" ? 1 : 0.8,
+  }));
 }
