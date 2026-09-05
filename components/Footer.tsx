@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Dictionary, Locale } from "@/lib/dictionary";
+import { Logo } from "./Logo";
 
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
@@ -7,7 +8,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 sm:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
-            <span className="font-display text-2xl font-bold text-foreground">fhemt</span>
+            <Logo locale={locale} />
             <p className="mt-3 max-w-xs text-sm text-foreground-secondary">{dict.footer.tagline}</p>
           </div>
 
