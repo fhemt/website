@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Dictionary, Locale } from "@/lib/dictionary";
+import { Logo } from "./Logo";
 
 export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const navLinks = [
@@ -12,9 +13,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <header className="sticky top-0 z-50 border-b border-border-light bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href={`/${locale}`} className="font-display text-2xl font-bold text-foreground">
-          fhemt
-        </Link>
+        <Logo locale={locale} />
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
