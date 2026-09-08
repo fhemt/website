@@ -28,9 +28,14 @@ interface FooterColumn {
   links: FooterLink[];
 }
 
+interface LegalSection {
+  heading: string;
+  body: string[];
+}
+
 export interface Dictionary {
   meta: { title: string; description: string };
-  nav: { howItWorks: string; subjects: string; faq: string; download: string };
+  nav: { howItWorks: string; subjects: string; faq: string; download: string; abonnement: string };
   hero: {
     title1: string;
     titleAccent: string;
@@ -57,8 +62,8 @@ export interface Dictionary {
   download: { appStoreCaption: string; playCaption: string };
   legal: {
     lastUpdated: string;
-    terms: { title: string; body: string[] };
-    privacy: { title: string; body: string[] };
+    terms: { title: string; sections: LegalSection[] };
+    privacy: { title: string; sections: LegalSection[] };
   };
   founder: {
     metaTitle: string;
@@ -68,6 +73,51 @@ export interface Dictionary {
     role: string;
     linkedinLabel: string;
     paragraphs: string[];
+  };
+  premium: {
+    login: {
+      metaTitle: string;
+      title: string;
+      subtitle: string;
+      emailLabel: string;
+      passwordLabel: string;
+      submit: string;
+      errorInvalidCredentials: string;
+      errorGeneric: string;
+      errorMissingFields: string;
+    };
+    panel: {
+      metaTitle: string;
+      greeting: string;
+      alreadyPremiumBadge: string;
+      logout: string;
+      ribTitle: string;
+      ribIntro: string;
+      ribBank: string;
+      ribHolder: string;
+      ribNumber: string;
+      priceLabel: string;
+      promoCodeLabel: string;
+      promoCodePlaceholder: string;
+      promoCodeApply: string;
+      promoCodeApplied: string;
+      promoCodeInvalid: string;
+      proofTitle: string;
+      proofIntro: string;
+      proofLabel: string;
+      submit: string;
+      submitPending: string;
+      submitError: string;
+      alreadyPendingNotice: string;
+      historyTitle: string;
+      historyEmpty: string;
+      statusPending: string;
+      statusApproved: string;
+      statusRejected: string;
+      amountLabel: string;
+      submittedOnLabel: string;
+      rejectionReasonLabel: string;
+    };
   };
 }
 
@@ -82,6 +132,7 @@ const fr: Dictionary = {
     subjects: "Matières",
     faq: "FAQ",
     download: "Télécharger",
+    abonnement: "Abonnement",
   },
   hero: {
     title1: "Apprends à la maison, ",
@@ -229,19 +280,151 @@ const fr: Dictionary = {
     playCaption: "Disponible sur",
   },
   legal: {
-    lastUpdated: "Dernière mise à jour : en cours de rédaction",
+    lastUpdated: "Dernière mise à jour : 8 septembre 2026",
     terms: {
       title: "Conditions d'utilisation",
-      body: [
-        "Cette page présentera les conditions d'utilisation de Fhemt une fois notre équipe juridique les aura finalisées : ce que couvre l'abonnement, les règles d'usage du contenu pédagogique, la résiliation, et les responsabilités de chaque partie.",
-        "En attendant la version définitive, toute question peut être adressée à contact@fhemt.ma.",
+      sections: [
+        {
+          heading: "Acceptation des conditions",
+          body: [
+            "En créant un compte ou en utilisant l'application ou le site Fhemt, tu acceptes ces conditions d'utilisation. Si tu es mineur, assure-toi d'avoir l'accord d'un parent ou tuteur avant de créer un compte.",
+          ],
+        },
+        {
+          heading: "Le service Fhemt",
+          body: [
+            "Fhemt propose des leçons, exercices et examens blancs pour les élèves de collège et de lycée au Maroc, en français et en darija. Une partie du contenu est accessible gratuitement ; le reste nécessite un compte Premium.",
+          ],
+        },
+        {
+          heading: "Ton compte",
+          body: [
+            "Tu es responsable de garder ton mot de passe confidentiel et de toute activité effectuée depuis ton compte. Préviens-nous immédiatement à contact@fhemt.ma si tu penses que quelqu'un d'autre y a accès.",
+          ],
+        },
+        {
+          heading: "Premium et paiement",
+          body: [
+            "L'accès Premium coûte 199 DH (ou un tarif réduit avec un code promo valide), payable par virement bancaire. Une fois ta preuve de paiement vérifiée par notre équipe, ton accès Premium est activé et reste valable tant que ton compte existe — ce n'est pas un abonnement avec prélèvement automatique.",
+            "Comme le paiement se fait par virement direct et non par une plateforme de paiement en ligne, les remboursements se font au cas par cas : contacte-nous à contact@fhemt.ma si tu penses avoir droit à un remboursement.",
+          ],
+        },
+        {
+          heading: "Contenu pédagogique",
+          body: [
+            "Les leçons, exercices, examens et tout le contenu de Fhemt appartiennent à Fhemt. Tu peux les utiliser pour ton propre apprentissage, mais pas les copier, les redistribuer ni les utiliser à des fins commerciales sans notre accord.",
+          ],
+        },
+        {
+          heading: "Usage autorisé",
+          body: [
+            "Tu t'engages à utiliser Fhemt normalement, sans essayer de contourner les limites de l'app (comme la batterie quotidienne), de partager ton compte, ou d'utiliser l'app d'une manière qui pourrait nuire au service ou aux autres élèves.",
+          ],
+        },
+        {
+          heading: "Résiliation",
+          body: [
+            "Tu peux arrêter d'utiliser Fhemt et supprimer ton compte à tout moment en nous écrivant à contact@fhemt.ma. Nous nous réservons le droit de suspendre un compte qui ne respecte pas ces conditions.",
+          ],
+        },
+        {
+          heading: "Limitation de responsabilité",
+          body: [
+            "Fhemt est un outil d'aide à l'apprentissage, pas un substitut à l'enseignement scolaire officiel. Nous faisons de notre mieux pour que le contenu soit juste et à jour, mais nous ne pouvons pas garantir un résultat scolaire précis.",
+          ],
+        },
+        {
+          heading: "Modifications de ces conditions",
+          body: [
+            "Nous pouvons mettre à jour ces conditions de temps en temps. La date en haut de cette page indique la dernière mise à jour. Continuer à utiliser Fhemt après une mise à jour vaut acceptation des nouvelles conditions.",
+          ],
+        },
+        {
+          heading: "Droit applicable",
+          body: ["Ces conditions sont régies par le droit marocain."],
+        },
+        {
+          heading: "Contact",
+          body: ["Pour toute question sur ces conditions, écris-nous à contact@fhemt.ma."],
+        },
       ],
     },
     privacy: {
       title: "Politique de confidentialité",
-      body: [
-        "Cette page détaillera précisément quelles données Fhemt collecte (compte, progression d'apprentissage, paiement), comment elles sont stockées et protégées, et les droits dont tu disposes sur tes données, une fois la version définitive validée par notre équipe juridique.",
-        "En attendant, toute question peut être adressée à contact@fhemt.ma.",
+      sections: [
+        {
+          heading: "Qui nous sommes",
+          body: [
+            "Fhemt est une plateforme d'apprentissage en ligne pour les élèves de collège et de lycée au Maroc. Cette politique explique quelles données nous collectons quand tu utilises l'application ou le site fhemt.ma, pourquoi, et comment les gérer. Pour toute question, écris-nous à contact@fhemt.ma.",
+          ],
+        },
+        {
+          heading: "Les données que nous collectons",
+          body: [
+            "Données de compte : ton prénom, ton nom, ton adresse email, ton mot de passe (jamais stocké en clair, uniquement sous forme hachée), ta ville et ton niveau scolaire (collège ou lycée, et année).",
+            "Progression d'apprentissage : les leçons et exercices que tu as terminés, tes résultats de quiz, ton XP, et ta « batterie » (le système qui limite le nombre de tentatives par jour).",
+            "Paiement Premium : si tu passes Premium par virement bancaire, on te demande une preuve de virement (capture d'écran ou PDF), le montant payé, et éventuellement un code d'affiliation. On ne collecte et on ne voit jamais tes coordonnées bancaires ou ton numéro de carte — seulement le justificatif que tu envoies toi-même.",
+            "Notifications : si tu actives les notifications, on garde un jeton technique (push token) lié à ton appareil pour pouvoir t'envoyer des rappels.",
+            "Informations techniques : le type d'appareil, le système (iOS/Android) et un identifiant d'appareil, pour faire fonctionner les notifications et pour le support technique.",
+          ],
+        },
+        {
+          heading: "Pourquoi nous utilisons ces données",
+          body: [
+            "Créer et gérer ton compte, te reconnecter en toute sécurité avec un code de vérification envoyé par email.",
+            "Faire fonctionner l'app : sauvegarder ta progression, débloquer les leçons suivantes, calculer ton XP.",
+            "Vérifier et activer ton accès Premium quand tu envoies une preuve de paiement.",
+            "T'envoyer des notifications si tu les as activées, par exemple des rappels de leçon.",
+            "Répondre à tes messages quand tu nous contactes.",
+            "Nous n'utilisons jamais tes données pour de la publicité ciblée, et nous ne les vendons à personne.",
+          ],
+        },
+        {
+          heading: "Le paiement Premium",
+          body: [
+            "Fhemt Premium se paie aujourd'hui par virement bancaire direct : tu envoies une preuve de paiement, et notre équipe vérifie et active ton accès manuellement. Fhemt ne traite et ne stocke aucune donnée de carte bancaire — le paiement se fait entre toi et ta banque. Une fois ton compte passé en Premium, l'accès reste actif tant que ton compte existe ; il n'y a pas de prélèvement automatique récurrent.",
+          ],
+        },
+        {
+          heading: "Où sont hébergées tes données",
+          body: [
+            "Tes données sont hébergées sur des serveurs Microsoft Azure, situés en Espagne. Les emails que Fhemt t'envoie (codes de vérification, confirmations) passent par Resend, notre prestataire d'envoi d'emails. Les notifications passent par le service technique d'Expo, l'outil que nous utilisons pour construire l'application.",
+          ],
+        },
+        {
+          heading: "Durée de conservation",
+          body: [
+            "Nous gardons tes données tant que ton compte reste actif. Si tu supprimes ton compte ou nous demandes de le faire, nous effaçons tes données personnelles dans un délai raisonnable, sauf ce que la loi nous oblige à garder — par exemple les justificatifs de paiement, pour des raisons comptables.",
+          ],
+        },
+        {
+          heading: "Tes droits",
+          body: [
+            "Tu peux à tout moment nous demander d'accéder à tes données, de les corriger, ou de les supprimer. Il te suffit d'écrire à contact@fhemt.ma depuis l'adresse email de ton compte.",
+          ],
+        },
+        {
+          heading: "Utilisation par des mineurs",
+          body: [
+            "Fhemt s'adresse à des élèves de collège et de lycée, dont beaucoup sont mineurs. Si tu as moins de 18 ans, nous te recommandons de créer ton compte avec l'accord d'un parent ou tuteur, qui peut nous contacter à tout moment à contact@fhemt.ma pour toute question sur les données de son enfant.",
+          ],
+        },
+        {
+          heading: "Sécurité",
+          body: [
+            "Nous protégeons tes données avec des connexions chiffrées (HTTPS) et un mot de passe qui n'est jamais stocké en clair. Aucun système n'est parfaitement inviolable, mais nous faisons de notre mieux pour protéger ton compte.",
+          ],
+        },
+        {
+          heading: "Modifications de cette politique",
+          body: [
+            "Nous pouvons mettre à jour cette politique de temps en temps, par exemple si nous ajoutons une nouvelle fonctionnalité. La date en haut de cette page indique la dernière mise à jour.",
+          ],
+        },
+        {
+          heading: "Contact",
+          body: ["Pour toute question sur cette politique ou sur tes données, écris-nous à contact@fhemt.ma."],
+        },
       ],
     },
   },
@@ -307,6 +490,51 @@ const fr: Dictionary = {
       "Comprendre.",
     ],
   },
+  premium: {
+    login: {
+      metaTitle: "Mon abonnement — Fhemt",
+      title: "Mon abonnement",
+      subtitle: "Connecte-toi avec ton compte Fhemt pour gérer ton abonnement Premium.",
+      emailLabel: "Email",
+      passwordLabel: "Mot de passe",
+      submit: "Continuer",
+      errorInvalidCredentials: "Email ou mot de passe incorrect.",
+      errorGeneric: "Une erreur est survenue. Réessaie.",
+      errorMissingFields: "Entre ton email et ton mot de passe.",
+    },
+    panel: {
+      metaTitle: "Mon abonnement — Fhemt",
+      greeting: "Bonjour",
+      alreadyPremiumBadge: "Tu es déjà Premium ✓",
+      logout: "Se déconnecter",
+      ribTitle: "Coordonnées bancaires",
+      ribIntro: "Fais un virement vers ce compte, puis envoie-nous la preuve de paiement ci-dessous.",
+      ribBank: "Banque",
+      ribHolder: "Titulaire",
+      ribNumber: "RIB",
+      priceLabel: "Prix Premium",
+      promoCodeLabel: "Code promo (optionnel)",
+      promoCodePlaceholder: "Code promo",
+      promoCodeApply: "Appliquer",
+      promoCodeApplied: "Code appliqué",
+      promoCodeInvalid: "Code promo invalide.",
+      proofTitle: "Envoyer ma preuve de paiement",
+      proofIntro: "Une fois le virement fait, envoie une capture d'écran ou un PDF du reçu. On vérifie sous 48h ouvrées.",
+      proofLabel: "Preuve de paiement",
+      submit: "Envoyer",
+      submitPending: "Envoi...",
+      submitError: "Impossible d'envoyer ta preuve. Réessaie.",
+      alreadyPendingNotice: "Ta dernière demande est en cours de vérification — inutile d'en renvoyer une autre.",
+      historyTitle: "Historique",
+      historyEmpty: "Aucune demande pour l'instant.",
+      statusPending: "En vérification",
+      statusApproved: "Approuvé",
+      statusRejected: "Refusé",
+      amountLabel: "Montant",
+      submittedOnLabel: "Envoyé le",
+      rejectionReasonLabel: "Motif",
+    },
+  },
 };
 
 const ar: Dictionary = {
@@ -320,6 +548,7 @@ const ar: Dictionary = {
     subjects: "المواد",
     faq: "الأسئلة الشائعة",
     download: "حمّل التطبيق",
+    abonnement: "الاشتراك",
   },
   hero: {
     title1: "تعلم فالدار، ",
@@ -467,19 +696,151 @@ const ar: Dictionary = {
     playCaption: "متوفر على",
   },
   legal: {
-    lastUpdated: "آخر تحديث: كتب دابا",
+    lastUpdated: "آخر تحديث: 8 شتنبر 2026",
     terms: {
       title: "شروط الاستخدام",
-      body: [
-        "هاد الصفحة غادي تبين شروط استخدام فهمت من بعد ما الفريق القانوني ديالنا يكمل صياغتها: أشنو كيغطي الاشتراك، قواعد استعمال المحتوى التعليمي، إلغاء الاشتراك، ومسؤولية كل طرف.",
-        "فانتظار النسخة النهائية، أي سؤال تقدر تصيفطو لـ contact@fhemt.ma.",
+      sections: [
+        {
+          heading: "الموافقة على الشروط",
+          body: [
+            "منين كتخلق حساب ولا كتستعمل التطبيق ولا الموقع ديال فهمت، كتوافق على هاد الشروط. إلا كنتي قاصر، تأكد أنك عندك موافقة الوالدين ولا الوصي قبل ما تخلق الحساب.",
+          ],
+        },
+        {
+          heading: "الخدمة ديال فهمت",
+          body: [
+            "فهمت كتقترح دروس، تمارين، وامتحانات بيضاء لتلاميذ الإعدادي والثانوي فالمغرب، بالفرنسية والدارجة. جزء من المحتوى متاح مجانًا؛ الباقي كيتطلب حساب بريميوم.",
+          ],
+        },
+        {
+          heading: "الحساب ديالك",
+          body: [
+            "نتا مسؤول على حفظ الباسوورد ديالك سري وعلى كل نشاط كيتدار من الحساب ديالك. خبرنا فالحين فـ contact@fhemt.ma إلا فكرتي بلي شي واحد آخر عندو أكسيس ليه.",
+          ],
+        },
+        {
+          heading: "البريميوم والخلاص",
+          body: [
+            "الأكسيس البريميوم كيتخلص بـ199 درهم (ولا ثمن مخفض إلا استعملتي كود بروموسيون صالح)، بالفيرمو البنكي. منين يتحقق الفريق ديالنا من دليل الخلاص ديالك، كيتفعّل الأكسيس البريميوم ديالك وكيبقى صالح طول ما الحساب ديالك موجود — ماشي اشتراك بخصم أوطوماتيكي.",
+            "حيت الخلاص كيدير بالفيرمو المباشر (ماشي عبر منصة خلاص إلكترونية)، الاسترجاع كيدار حالة بحالة: تواصل معانا فـ contact@fhemt.ma إلا كنتي كتفكر بلي عندك الحق فاسترجاع.",
+          ],
+        },
+        {
+          heading: "المحتوى التعليمي",
+          body: [
+            "الدروس، التمارين، الامتحانات وكل محتوى فهمت ملك ديال فهمت. تقدر تستعملهم للتعلم ديالك، ولكن ماشي تنسخهم، توزعهم، ولا تستعملهم لأغراض تجارية بلا الموافقة ديالنا.",
+          ],
+        },
+        {
+          heading: "الاستعمال المسموح",
+          body: [
+            "كتلتزم تستعمل فهمت بطريقة عادية، بلا ما تحاول تتحايل على الحدود ديال التطبيق (بحال البطارية اليومية)، تشارك الحساب ديالك، ولا تستعمل التطبيق بطريقة يمكن تضر بالخدمة ولا بالتلاميذ الآخرين.",
+          ],
+        },
+        {
+          heading: "إنهاء الحساب",
+          body: [
+            "تقدر توقف استعمال فهمت وتحيد الحساب ديالك فأي وقت بالكتابة لينا فـ contact@fhemt.ma. عندنا الحق نوقفو حساب ما كيحترمش هاد الشروط.",
+          ],
+        },
+        {
+          heading: "تحديد المسؤولية",
+          body: [
+            "فهمت أداة كتعاونك فالتعلم، ماشي بديل على التعليم المدرسي الرسمي. كندارو جهدنا باش يكون المحتوى صحيح ومحدث، ولكن ما نقدروش نضمنو نتيجة دراسية محددة.",
+          ],
+        },
+        {
+          heading: "تغييرات هاد الشروط",
+          body: [
+            "نقدرو نحدثو هاد الشروط من وقت لآخر. التاريخ فوق هاد الصفحة كيبين آخر تحديث. إلا كملتي تستعمل فهمت من بعد تحديث، هاد شي كيعني أنك موافق على الشروط الجديدة.",
+          ],
+        },
+        {
+          heading: "القانون المطبق",
+          body: ["هاد الشروط كتخضع للقانون المغربي."],
+        },
+        {
+          heading: "تواصل معانا",
+          body: ["لأي سؤال على هاد الشروط، كتب لينا فـ contact@fhemt.ma."],
+        },
       ],
     },
     privacy: {
       title: "سياسة الخصوصية",
-      body: [
-        "هاد الصفحة غادي تفصل بالضبط أشنو من معلومات كيجمع فهمت (الحساب، التقدم فالتعلم، الخلاص)، كيفاش كيتخزنو ويتحاميو، والحقوق اللي عندك على المعلومات ديالك، من بعد ما الفريق القانوني ديالنا يصادق على النسخة النهائية.",
-        "فانتظار هادشي، أي سؤال تقدر تصيفطو لـ contact@fhemt.ma.",
+      sections: [
+        {
+          heading: "شكون حنا",
+          body: [
+            "فهمت هي منصة للتعلم عبر الانترنت مخصصة لتلاميذ الإعدادي والثانوي فالمغرب. هاد السياسة كتشرح أشنو من معلومات كنجمعو منين كتستعمل التطبيق ولا الموقع fhemt.ma، علاش، وكيفاش تقدر تتحكم فيها. أي سؤال، كتب لينا فـ contact@fhemt.ma.",
+          ],
+        },
+        {
+          heading: "المعلومات اللي كنجمعو",
+          body: [
+            "معلومات الحساب: سميتك، اسمك العائلي، الإيميل ديالك، الباسوورد (اللي عمرو ما كيتخزن بصيغة واضحة، غير مشفر)، المدينة ديالك والمستوى الدراسي (إعدادي ولا ثانوي، والسنة).",
+            "التقدم فالتعلم: الدروس والتمارين اللي سالتيها، النتائج ديال الكويزات، الـXP، و«البطارية» (النظام اللي كيحدد عدد المحاولات فالنهار).",
+            "خلاص البريميوم: إلا بغيتي تولي بريميوم بالفيرمو البنكي، كنطلبو منك دليل الفيرمو (تصويرة ولا PDF)، المبلغ اللي خلصتي، وربما كود ديال الأفيلياسيون. عمرنا ما كنجمعو ولا كنشوفو معلومات الكارط البنكي ديالك — غير الوثيقة اللي كتصيفط بنفسك.",
+            "الإشعارات: إلا فعّلتي الإشعارات، كنحتفظو بتوكن تقني مرتبط بالجهاز ديالك باش نقدرو نصيفطو ليك تذكيرات.",
+            "معلومات تقنية: نوع الجهاز، النظام (iOS/Android) ومعرّف الجهاز، باش تخدم الإشعارات ونقدرو نعاونوك تقنيًا.",
+          ],
+        },
+        {
+          heading: "علاش كنستعملو هاد المعلومات",
+          body: [
+            "باش نخلقو ونديرو الحساب ديالك، ونخليوك تدخل بأمان بكود تحقق كيتصيفط بالإيميل.",
+            "باش يخدم التطبيق: نحفظو التقدم ديالك، نفتحو ليك الدروس اللي كتجي، نحسبو الـXP.",
+            "باش نتحققو ونفعلو الأكسيس البريميوم منين كتصيفط دليل الخلاص.",
+            "باش نصيفطو ليك إشعارات إلا فعّلتيهم، مثلا تذكيرات بالدروس.",
+            "باش نجاوبوك منين كتكتب لينا.",
+            "عمرنا ما كنستعملو المعلومات ديالك للإشهار المستهدف، وعمرنا ما كنبيعوها لحتى واحد.",
+          ],
+        },
+        {
+          heading: "خلاص البريميوم",
+          body: [
+            "فهمت بريميوم كيتخلص دابا بالفيرمو البنكي المباشر: كتصيفط دليل الخلاص، والفريق ديالنا كيتحقق ويفعّل الأكسيس ديالك يدويًا. فهمت عمرها ما كتعالج ولا كتخزن معلومات الكارط البنكي — الخلاص كيدار بيناتك وبين البنك ديالك. منين يولي الحساب ديالك بريميوم، الأكسيس كيبقى فعّال طول ما الحساب ديالك موجود؛ ماكاينش خصم أوطوماتيكي متكرر.",
+          ],
+        },
+        {
+          heading: "فين مخزنة المعلومات ديالك",
+          body: [
+            "المعلومات ديالك مخزنة فسيرفورات Microsoft Azure، الكاينين فإسبانيا. الإيميلات اللي كتصيفط ليك فهمت (كودات التحقق، التأكيدات) كتعدي عبر Resend، المزود ديالنا ديال الإيميلات. الإشعارات كتعدي عبر الخدمة التقنية ديال Expo، الأداة اللي كنستعملو باش نبنيو التطبيق.",
+          ],
+        },
+        {
+          heading: "مدة الاحتفاظ",
+          body: [
+            "كنحتفظو بالمعلومات ديالك طول ما الحساب ديالك فعّال. إلا حيتي الحساب ديالك ولا طلبتي منا نحيوه، كنمسحو المعلومات الشخصية ديالك فأجل معقول، إلا ما كانش شي حاجة القانون كيجبرنا نحتفظو بيها — مثلا وثائق الخلاص، لأسباب محاسباتية.",
+          ],
+        },
+        {
+          heading: "الحقوق ديالك",
+          body: [
+            "تقدر فأي وقت تطلب منا الوصول للمعلومات ديالك، تصحيحها، ولا حذفها. غير كتب لينا فـ contact@fhemt.ma من الإيميل ديال الحساب ديالك.",
+          ],
+        },
+        {
+          heading: "الاستعمال من طرف القاصرين",
+          body: [
+            "فهمت موجهة لتلاميذ الإعدادي والثانوي، وبزاف منهم قاصرين. إلا عندك أقل من 18 عام، كننصحوك تخلق الحساب بموافقة الوالدين ولا الوصي، اللي يقدر يتواصل معانا فأي وقت فـ contact@fhemt.ma لأي سؤال على معلومات ولدو.",
+          ],
+        },
+        {
+          heading: "الأمان",
+          body: [
+            "كنحميو المعلومات ديالك بروابط مشفرة (HTTPS) وباسوورد اللي عمرو ما كيتخزن بصيغة واضحة. ماكاين حتى نظام كامل الأمان مية فالمية، ولكن كندارو جهدنا باش نحميو الحساب ديالك.",
+          ],
+        },
+        {
+          heading: "تغييرات هاد السياسة",
+          body: [
+            "نقدرو نحدثو هاد السياسة من وقت لآخر، مثلا إلا زدنا خاصية جديدة. التاريخ فوق هاد الصفحة كيبين آخر تحديث.",
+          ],
+        },
+        {
+          heading: "تواصل معانا",
+          body: ["لأي سؤال على هاد السياسة ولا على المعلومات ديالك، كتب لينا فـ contact@fhemt.ma."],
+        },
       ],
     },
   },
@@ -544,6 +905,51 @@ const ar: Dictionary = {
       "وكل طريق كيبدا بحاجة وحدة:",
       "تفهم.",
     ],
+  },
+  premium: {
+    login: {
+      metaTitle: "الاشتراك ديالي — فهمت",
+      title: "الاشتراك ديالي",
+      subtitle: "دخل بالحساب ديالك ديال فهمت باش تدير الاشتراك البريميوم ديالك.",
+      emailLabel: "الإيميل",
+      passwordLabel: "الباسوورد",
+      submit: "كمل",
+      errorInvalidCredentials: "الإيميل ولا الباسوورد ماشي صحيحين.",
+      errorGeneric: "وقع مشكل. عاود المحاولة.",
+      errorMissingFields: "دخل الإيميل والباسوورد ديالك.",
+    },
+    panel: {
+      metaTitle: "الاشتراك ديالي — فهمت",
+      greeting: "أهلا",
+      alreadyPremiumBadge: "نتا ديجا بريميوم ✓",
+      logout: "خروج",
+      ribTitle: "المعلومات البنكية",
+      ribIntro: "دير الفيرمو لهاد الحساب، من بعد صيفط لينا دليل الخلاص تحت.",
+      ribBank: "البنك",
+      ribHolder: "صاحب الحساب",
+      ribNumber: "RIB",
+      priceLabel: "ثمن البريميوم",
+      promoCodeLabel: "كود برومو (اختياري)",
+      promoCodePlaceholder: "كود برومو",
+      promoCodeApply: "طبق",
+      promoCodeApplied: "الكود تطبق",
+      promoCodeInvalid: "كود البرومو ماشي صحيح.",
+      proofTitle: "صيفط دليل الخلاص",
+      proofIntro: "من بعد ما دار الفيرمو، صيفط تصويرة ولا PDF ديال الوصل. كنتحققو فظرف 48 ساعة ديال الخدمة.",
+      proofLabel: "دليل الخلاص",
+      submit: "صيفط",
+      submitPending: "كيتصيفط...",
+      submitError: "ما قدرناش نصيفطو دليل الخلاص. عاود المحاولة.",
+      alreadyPendingNotice: "الطلب الأخير ديالك مازال كيتحقق فيه — ماخصكش تصيفط واحد آخر.",
+      historyTitle: "التاريخ",
+      historyEmpty: "ماكاين حتى طلب دابا.",
+      statusPending: "كيتحقق فيه",
+      statusApproved: "تقبل",
+      statusRejected: "ترفض",
+      amountLabel: "المبلغ",
+      submittedOnLabel: "تصيفط فـ",
+      rejectionReasonLabel: "السبب",
+    },
   },
 };
 

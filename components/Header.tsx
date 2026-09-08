@@ -34,12 +34,12 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           >
             {otherLocale === "ar" ? "العربية" : "Français"}
           </Link>
-          <a
-            href="#telecharger"
+          <Link
+            href={`/${locale}/abonnement`}
             className="rounded-full bg-primary px-4 py-2.5 text-sm font-semibold text-on-primary transition hover:bg-primary-pressed sm:px-5"
           >
-            {dict.nav.download}
-          </a>
+            {dict.nav.abonnement}
+          </Link>
         </div>
       </div>
     </header>

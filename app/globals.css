@@ -30,6 +30,10 @@
 
   --gold: #b8860f;
   --gold-light: #fbf0d7;
+
+  --danger: #d64545;
+  --danger-light: #fbe9e9;
+  --on-danger: #ffffff;
 }
 
 @theme inline {
@@ -62,6 +66,10 @@
 
   --color-gold: var(--gold);
   --color-gold-light: var(--gold-light);
+
+  --color-danger: var(--danger);
+  --color-danger-light: var(--danger-light);
+  --color-on-danger: var(--on-danger);
 
   --font-display: var(--font-baloo);
   --font-sans: var(--font-nunito);
