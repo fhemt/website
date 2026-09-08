@@ -60,6 +60,15 @@ export interface Dictionary {
     terms: { title: string; body: string[] };
     privacy: { title: string; body: string[] };
   };
+  founder: {
+    metaTitle: string;
+    metaDescription: string;
+    eyebrow: string;
+    name: string;
+    role: string;
+    linkedinLabel: string;
+    paragraphs: string[];
+  };
 }
 
 const fr: Dictionary = {
@@ -199,7 +208,10 @@ const fr: Dictionary = {
       },
       {
         title: "Entreprise",
-        links: [{ href: "mailto:contact@fhemt.ma", label: "Nous contacter" }],
+        links: [
+          { href: "/mot-du-fondateur", label: "Le mot du fondateur" },
+          { href: "mailto:contact@fhemt.ma", label: "Nous contacter" },
+        ],
       },
       {
         title: "Légal",
@@ -232,6 +244,68 @@ const fr: Dictionary = {
         "En attendant, toute question peut être adressée à contact@fhemt.ma.",
       ],
     },
+  },
+  founder: {
+    metaTitle: "Le mot du fondateur — Dia Eddine El Keantaoui",
+    metaDescription:
+      "Pourquoi Dia Eddine El Keantaoui a créé Fhemt : le poids des cours particuliers pour les familles marocaines, et l'envie de donner aux élèves la même expérience d'apprentissage claire qui l'a marqué en apprenant à coder.",
+    eyebrow: "Le mot du fondateur",
+    name: "Dia Eddine El Keantaoui",
+    role: "Fondateur de Fhemt",
+    linkedinLabel: "Voir le profil LinkedIn",
+    paragraphs: [
+      "Aujourd'hui, FHEMT est officiellement en ligne.",
+      "Mais avant de parler de la plateforme, j'aimerais raconter pourquoi je l'ai créée.",
+      "Au Maroc, beaucoup d'élèves rencontrent aujourd'hui un problème assez simple à expliquer, mais beaucoup plus difficile à résoudre.",
+      "Ils ont souvent un téléphone, mais pas forcément un ordinateur.",
+      "Ils ont leurs cours, leurs livres, leurs exercices… mais lorsqu'ils ne comprennent pas quelque chose, ils se retrouvent parfois seuls face à leur écran.",
+      "Alors les parents cherchent une solution.",
+      "Après les frais de scolarité, les inscriptions, les livres et toutes les autres dépenses liées à l'éducation, une nouvelle question arrive :",
+      "« Est-ce qu'on doit encore payer des cours supplémentaires ? »",
+      "Puis viennent les calculs.",
+      "Une matière.\nPuis une deuxième.\nPuis une troisième.",
+      "Et rapidement, le budget augmente.",
+      "Pour les parents, c'est une dépense importante. Pour l'élève, c'est parfois plusieurs heures supplémentaires par semaine. Et malgré tout cela, rien ne garantit que l'expérience d'apprentissage sera réellement meilleure.",
+      "Pourtant, nous avons déjà des solutions EdTech au Maroc.",
+      "Mais en tant qu'ingénieur logiciel, j'ai souvent eu l'impression de retrouver la même expérience :",
+      "Des PDF.\nDes exercices.\nDes corrections.\nDes pages et des pages de contenu.",
+      "Et parfois, pour trouver simplement ce dont on a besoin, on a l'impression de marcher dans les petites rues de la médina sans savoir exactement où aller.",
+      "On avance, on cherche, on se perd.",
+      "Et c'est justement là que je me suis souvenu de la manière dont j'ai appris à développer.",
+      "Quand j'ai commencé à apprendre l'informatique, il y avait une plateforme qui m'a énormément marqué : Le Site du Zéro, devenu ensuite OpenClassrooms.",
+      "Ce que j'aimais, ce n'était pas simplement le contenu.",
+      "C'était la façon dont on me l'expliquait.",
+      "J'avais l'impression que quelqu'un était réellement en train de m'accompagner.",
+      "Les concepts étaient divisés en petites parties. On avançait étape par étape. On pouvait prendre son temps. On ne recevait pas 300 pages d'un coup en se demandant par où commencer.",
+      "Même lorsqu'un sujet semblait compliqué, il devenait progressivement compréhensible.",
+      "Et je me suis posé une question :",
+      "Pourquoi ne pas offrir cette même expérience aux élèves marocains ?",
+      "Pas simplement mettre des cours sur Internet.",
+      "Mais repenser complètement l'expérience d'apprentissage.",
+      "Créer une plateforme pensée pour les élèves marocains, adaptée à leur programme, accessible depuis leur téléphone, structurée pour qu'ils puissent avancer étape par étape et suffisamment simple pour qu'ils puissent apprendre sans se sentir constamment dépassés.",
+      "C'est l'idée derrière FHEMT.",
+      "Un nom qui signifie littéralement « comprendre ».",
+      "Parce qu'au fond, apprendre ne devrait pas simplement consister à mémoriser.",
+      "Il faut comprendre.",
+      "Aujourd'hui, FHEMT commence son chemin.",
+      "Nous avons beaucoup de choses à construire, beaucoup de matières à ajouter, beaucoup d'améliorations à apporter et surtout beaucoup à apprendre de nos utilisateurs.",
+      "Mais l'objectif reste simple :",
+      "Rendre une expérience d'apprentissage de qualité accessible à un prix que les familles peuvent réellement se permettre.",
+      "Une expérience qui donne à l'élève l'envie d'apprendre plutôt que la peur de ne pas comprendre.",
+      "Une expérience qui transforme une matière compliquée en petites étapes accessibles.",
+      "Une expérience qui permet à un élève de prendre son téléphone, ouvrir FHEMT et simplement se demander :",
+      "« Qu'est-ce que je vais comprendre aujourd'hui ? »",
+      "Je ne sais pas encore jusqu'où FHEMT ira.",
+      "Mais je sais pourquoi nous avons commencé.",
+      "Et je sais que nous avons énormément de chemin à parcourir.",
+      "Aujourd'hui, nous ouvrons la première page.",
+      "Demain, nous voulons écrire toute une histoire.",
+      "Bienvenue dans l'aventure FHEMT.",
+      "Parce que l'éducation ne devrait pas être un labyrinthe.",
+      "Elle devrait être un chemin.",
+      "Et chaque chemin commence par une chose :",
+      "Comprendre.",
+    ],
   },
 };
 
@@ -372,7 +446,10 @@ const ar: Dictionary = {
       },
       {
         title: "الشركة",
-        links: [{ href: "mailto:contact@fhemt.ma", label: "تواصل معانا" }],
+        links: [
+          { href: "/mot-du-fondateur", label: "الكلمة ديال المؤسس" },
+          { href: "mailto:contact@fhemt.ma", label: "تواصل معانا" },
+        ],
       },
       {
         title: "قانوني",
@@ -405,6 +482,68 @@ const ar: Dictionary = {
         "فانتظار هادشي، أي سؤال تقدر تصيفطو لـ contact@fhemt.ma.",
       ],
     },
+  },
+  founder: {
+    metaTitle: "الكلمة ديال المؤسس — Dia Eddine El Keantaoui",
+    metaDescription:
+      "علاش Dia Eddine El Keantaoui خلق فهمت: التكلفة ديال دروس الدعم على العائلات المغربية، والرغبة فأنو يعطي للتلاميذ نفس التجربة الواضحة ديال التعلم اللي أثرات فيه ملي كان كيتعلم البرمجة.",
+    eyebrow: "الكلمة ديال المؤسس",
+    name: "Dia Eddine El Keantaoui",
+    role: "المؤسس ديال فهمت",
+    linkedinLabel: "شوف البروفايل ديالي على LinkedIn",
+    paragraphs: [
+      "اليوم، فهمت رسميا أونلاين.",
+      "ولكن قبل ما نهضر على المنصة، بغيت نحكي ليكم علاش خلقتها.",
+      "فالمغرب، بزاف ديال التلاميذ عندهم مشكل سهل نشرحوه، ولكن صعيب بزاف نحلوه.",
+      "غالبا عندهم تيليفون، ولكن ماشي بالضرورة عندهم أورديناتور.",
+      "عندهم الدروس ديالهم، الكتب، التمارين... ولكن ملي مايفهموش شي حاجة، كيلقاو روحهم وحدهم قدام الشاشة.",
+      "إذن الوالدين كيقلبو على حل.",
+      "من بعد مصاريف التمدرس، التسجيلات، الكتب، وكلشي المصاريف اللي مرتبطة بالتعليم، كيطرح سؤال جديد:",
+      "«واش خاصنا نخلصو حتى دروس الدعم؟»",
+      "من بعد كتبدا الحسبة.",
+      "مادة.\nمن بعد جوج.\nمن بعد تلاتة.",
+      "وبسرعة، الميزانية كتزيد.",
+      "بالنسبة للوالدين، مصروف كبير. بالنسبة للتلميذ، ساعات زايدة فالسيمانة. ورغم هادشي كامل، والو ماكيضمن أن التجربة ديال التعلم غادي تكون بصح أحسن.",
+      "ومع ذلك، عندنا ديجا حلول EdTech فالمغرب.",
+      "ولكن كمهندس معلوماتي، غالبا كان عندي الإحساس أني كنلقى نفس التجربة:",
+      "PDF.\nتمارين.\nتصحيحات.\nصفحات ووراها صفحات ديال المحتوى.",
+      "وبعض المرات، باش تلقى غير اللي محتاجو، كيبان ليك بلي كتمشي فالأزقة الصغار ديال المدينة القديمة بلا ماتعرف فين غادي.",
+      "كتقدم، كتقلب، وكتضيع.",
+      "وهنا بالضبط تفكرت الطريقة اللي بيها تعلمت البرمجة.",
+      "ملي بديت نتعلم الإعلاميات، كانت كاينة منصة أثرات فيا بزاف: Le Site du Zéro، اللي ولات من بعد OpenClassrooms.",
+      "اللي كنت كنبغيه، ماشي غير المحتوى.",
+      "كانت الطريقة اللي بيها كيشرحوه ليا.",
+      "كان عندي الإحساس أن شي واحد كيرافقني بصح.",
+      "المفاهيم كانت مقسمة لأجزاء صغار. كتقدم خطوة بخطوة. تقدر تاخد الوقت ديالك. ماكنتيش كتوصلك 300 صفحة دفعة وحدة وأنت كتسقسي روحك منين تبدا.",
+      "حتى ملي شي موضوع كيبان صعيب، كان كيولي مفهوم شوية بشوية.",
+      "وسقسيت روحي سؤال:",
+      "علاش ماغاديش نعطي نفس التجربة للتلاميذ المغاربة؟",
+      "ماشي غير نحطو الدروس فالانترنت.",
+      "ولكن نعاودو نبنيو من جديد التجربة ديال التعلم بالكامل.",
+      "نخلقو منصة متصورة للتلاميذ المغاربة، متلائمة مع البرنامج ديالهم، خدامة من التيليفون ديالهم، مبنية باش يقدرو يتقدمو خطوة بخطوة وسهلة بزاف باش يتعلمو بلا مايحسو ديما بلي فايتهم الموضوع.",
+      "هادي هي الفكرة اللي وراء فهمت.",
+      "إسم كيعني بالضبط «تفهم».",
+      "لأنو فالأصل، التعلم ماخاصوش يكون غير الحفظ.",
+      "خاصك تفهم.",
+      "اليوم، فهمت كتبدا الطريق ديالها.",
+      "عندنا بزاف ديال الحوايج نبنيوهم، بزاف ديال المواد نزيدوهم، بزاف ديال التحسينات نديروهم، وقبل كلشي بزاف نتعلمو من المستخدمين ديالنا.",
+      "ولكن الهدف بقا بسيط:",
+      "نخليو تجربة ديال التعلم ذات جودة، بثمن اللي العائلات تقدر بصح تحمل.",
+      "تجربة كتعطي للتلميذ الرغبة فالتعلم عوض الخوف من مافهمش.",
+      "تجربة كتبدل مادة صعيبة لخطوات صغار وسهلة.",
+      "تجربة كتخلي التلميذ ياخد التيليفون ديالو، يحل فهمت، وغير يسقسي روحو:",
+      "«أشنو غادي نفهم اليوم؟»",
+      "مازال ماعرفش فين غادي توصل فهمت.",
+      "ولكن كنعرف علاش بدينا.",
+      "وكنعرف أن باقي عندنا طريق طويل بزاف.",
+      "اليوم، كنحلو الصفحة الأولى.",
+      "غدا، بغينا نكتبو قصة كاملة.",
+      "مرحبا بيكم فمغامرة فهمت.",
+      "لأن التعليم ماخاصوش يكون متاهة.",
+      "خاصو يكون طريق.",
+      "وكل طريق كيبدا بحاجة وحدة:",
+      "تفهم.",
+    ],
   },
 };
 
