@@ -10,7 +10,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const dict = getDictionary(locale);
-  return { title: dict.legal.privacy.title, robots: { index: false, follow: true } };
+  return { title: dict.legal.privacy.title, robots: { index: true, follow: true } };
 }
 
 export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -18,21 +18,5 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
   if (!isLocale(locale)) notFound();
   const dict = getDictionary(locale);
 
-  return (
-    <LegalPage locale={locale} dict={dict} title={dict.legal.privacy.title}>
-      {dict.legal.privacy.body.map((paragraph, i) =>
-        i === dict.legal.privacy.body.length - 1 ? (
-          <p key={i}>
-            {paragraph.split("contact@fhemt.ma")[0]}
-            <a href="mailto:contact@fhemt.ma" className="font-medium text-primary">
-              contact@fhemt.ma
-            </a>
-            {paragraph.split("contact@fhemt.ma")[1]}
-          </p>
-        ) : (
-          <p key={i}>{paragraph}</p>
-        )
-      )}
-    </LegalPage>
-  );
+  return <LegalPage locale={locale} dict={dict} title={dict.legal.privacy.title} sections={dict.legal.privacy.sections} />;
 }
